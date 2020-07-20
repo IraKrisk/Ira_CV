@@ -1,0 +1,96 @@
+// CSS Reset
+html {
+box-sizing: border-box;
+font-size: 62.5%; 
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+abbr[title] {
+  text-decoration: none;
+}
+section {
+  width: 90%;
+  margin: 0 auto;
+}
+
+// Variables
+$blue-dark: #366092;
+$blue-light: #dce6f2;
+$text-color: #262626;
+
+::placeholder {
+  color: $blue-dark;
+}
+::selection {
+  color: $blue-light;
+  background: $blue-dark;
+}
+
+// Utility Class
+.center {
+  text-align: center;
+}
+
+// Extends
+%date {
+  float: right;
+  font-size: 1.4rem;
+}
+
+// Mixins
+@mixin padding-bottom($padding) {
+  & > *:not(:last-child) {
+    padding-bottom: $padding;
+  }
+}
+@mixin ease-out {
+  transition: all .5s ease-out;
+}
+@mixin jump-effect($skew, $scale, $translate) {
+  &:hover {
+    transform: skewY($skew) scale($scale) translateX($translate);
+  }
+}
+
+@mixin media1 {
+  @media screen and (min-width: 37.5em) {
+    @content;
+  }
+}
+@mixin media2 {
+  @media screen and (min-width: 56.25em) {
+    @content;
+  }
+}
+@mixin media3 {
+  @media screen and (min-width: 68.75em) {
+    @content;
+  }
+}
+@mixin media4 {
+  @media screen and (min-width: 75em) {
+    @content;
+  }
+}

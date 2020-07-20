@@ -1,0 +1,80 @@
+// Navigation
+.nav {
+  width: 93%;
+  margin: 0 auto;
+  background: $blue-dark;
+  @include ease-out;
+  &__list {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+    grid-gap: 2rem;
+    justify-items: center;
+  }
+  &__item {
+    @include jump-effect(-4deg, 1.1, .5rem);
+    @include ease-out; 
+    &:hover {
+      border-bottom: .1rem solid $blue-light;
+    }
+  }
+  &__link {
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: $blue-light;
+    }
+  }
+}
+
+// Menu Button
+.menu {
+  position: absolute;
+  top: 3rem;
+  right: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  z-index: 20;
+  padding: 3rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 3rem;
+  padding-right: .5rem;
+  &__btn {
+    &, &::before, &::after {
+      width: 2.5rem;
+      height: .2rem;
+      background-color: $blue-light;
+      @include ease-out;
+      position: relative;
+      float: right;
+    }
+    &::before, &::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      transform: rotate(0, 0) translate(0, 0);
+    }
+    &::before {
+      top: -.7rem;
+      right: 0;
+    }
+    &::after {
+      top: .6rem;
+      left: 0;
+    }
+  
+    // menu button open
+    &.open {
+      background: transparent;
+      &::before {
+        transform: rotate(45deg) translate(.4rem, .7rem);
+      }
+      &::after {
+        transform: rotate(-45deg) translate(.25rem, -.5rem);
+      }
+    }  
+  }
+}

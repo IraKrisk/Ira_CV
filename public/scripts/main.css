@@ -1,1 +1,491 @@
-/* No CSS */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+abbr[title] {
+  text-decoration: none;
+}
+
+section {
+  width: 90%;
+  margin: 0 auto;
+}
+
+::placeholder {
+  color: #366092;
+}
+
+::selection {
+  color: #dce6f2;
+  background: #366092;
+}
+
+.center {
+  text-align: center;
+}
+
+.work__date, .education__date {
+  float: right;
+  font-size: 1.4rem;
+}
+
+body {
+  color: #262626;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1.6rem;
+}
+
+h1, h2, h3, h4 {
+  color: #dce6f2;
+  font-weight: 300;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+h3, h4 {
+  color: #366092;
+  font-weight: 700;
+}
+
+h3 {
+  letter-spacing: .05;
+  text-transform: uppercase;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-gap: 1.5rem;
+  align-items: end;
+  padding: 4rem 0 2rem;
+  transition: all .5s ease-out;
+}
+
+h3:hover {
+  transform: skewY(-0.2deg) scale(1.02) translateX(0);
+}
+
+h3::before, h3::after {
+  content: '';
+  display: block;
+  height: .15rem;
+  background: #366092;
+  margin-bottom: .4rem;
+  background: linear-gradient(to left, #dce6f2, #366092);
+}
+
+h3::before {
+  background: linear-gradient(to right, #dce6f2, #366092);
+}
+
+h4 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.8rem;
+  display: inline-block;
+}
+
+.nav {
+  width: 93%;
+  margin: 0 auto;
+  background: #366092;
+  transition: all .5s ease-out;
+}
+
+.nav__list {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+  grid-gap: 2rem;
+  justify-items: center;
+}
+
+.nav__item {
+  transition: all .5s ease-out;
+}
+
+.nav__item:hover {
+  transform: skewY(-4deg) scale(1.1) translateX(0.5rem);
+}
+
+.nav__item:hover {
+  border-bottom: 0.1rem solid #dce6f2;
+}
+
+.nav__link:link, .nav__link:visited, .nav__link:hover, .nav__link:active {
+  color: #dce6f2;
+}
+
+.menu {
+  position: absolute;
+  top: 3rem;
+  right: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  z-index: 20;
+  padding: 3rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 3rem;
+  padding-right: .5rem;
+}
+
+.menu__btn, .menu__btn::before, .menu__btn::after {
+  width: 2.5rem;
+  height: .2rem;
+  background-color: #dce6f2;
+  transition: all .5s ease-out;
+  position: relative;
+  float: right;
+}
+
+.menu__btn::before, .menu__btn::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  transform: rotate(0, 0) translate(0, 0);
+}
+
+.menu__btn::before {
+  top: -.7rem;
+  right: 0;
+}
+
+.menu__btn::after {
+  top: .6rem;
+  left: 0;
+}
+
+.menu__btn.open {
+  background: transparent;
+}
+
+.menu__btn.open::before {
+  transform: rotate(45deg) translate(0.4rem, 0.7rem);
+}
+
+.menu__btn.open::after {
+  transform: rotate(-45deg) translate(0.25rem, -0.5rem);
+}
+
+.header {
+  background-color: #366092;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  padding: 6rem 0 9rem;
+  position: relative;
+}
+
+.header__nav {
+  position: absolute;
+  top: 3rem;
+  transform: translateY(-16rem);
+  padding: 0 0 3rem;
+}
+
+.header__nav--name {
+  grid-column: 1 / -1;
+  width: 90%;
+  color: #dce6f2;
+  font-size: 2.3rem;
+  font-weight: 300;
+  padding: 0 0 3rem 0;
+  margin: -2rem auto 0 7%;
+  display: none;
+}
+
+.header__nav--name:hover {
+  transform: skewY(0) scale(1) translateX(0);
+}
+
+.header__nav.open {
+  transform: translateY(1rem);
+}
+
+.info {
+  font-style: normal;
+  width: 100%;
+  padding: 6rem 0;
+  background-color: #dce6f2;
+  clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+  margin-top: -6rem;
+}
+
+.info__text {
+  position: relative;
+  line-height: 3;
+  font-weight: 600;
+  text-align: center;
+  transform: translateX(-2rem);
+}
+
+.info__icon {
+  height: 2.5rem;
+  width: 2.5rem;
+  fill: #366092;
+  position: absolute;
+  top: 1.2rem;
+  transform: translateX(50%);
+  transition: all .5s ease-out;
+}
+
+.info__icon:hover {
+  transform: skewY(-4deg) scale(1.1) translateX(1.7rem);
+}
+
+.info a:link, .info a:visited, .info a:hover, .info a:active {
+  color: #262626;
+}
+
+.about h3 {
+  padding-top: 3rem;
+}
+
+.about__paragraph > *:not(:last-child) {
+  padding-bottom: 0.5rem;
+}
+
+.about__paragraph p {
+  font-weight: 400;
+}
+
+.work__wrapper > *:not(:last-child) {
+  padding-bottom: 3rem;
+}
+
+.work__date {
+  padding-top: .5rem;
+}
+
+.work__company {
+  padding: 1rem 0 .5rem 0;
+}
+
+.work__desc > p {
+  margin-left: 1rem;
+}
+
+.work__desc > *:not(:last-child) {
+  padding-bottom: 0.5rem;
+}
+
+.education__institution {
+  padding-bottom: 1rem;
+}
+
+.education__degree {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.education__date {
+  padding-top: .3rem;
+}
+
+.skills__list li {
+  padding: .5rem;
+  font-weight: 400;
+}
+
+.languages__language > *:not(:last-child) {
+  padding-bottom: 2rem;
+}
+
+.projects__project > *:not(:last-child) {
+  padding-bottom: 2rem;
+}
+
+.certificates__mobile > a {
+  display: block;
+  padding: .4rem;
+}
+
+.certificates__mobile h4 {
+  font-weight: 100;
+  font-size: 1.6rem;
+}
+
+.certificates__desktop {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.certificates__desktop > a {
+  display: none;
+}
+
+.certificates__desktop img {
+  width: 32rem;
+}
+
+.hobbies__paragraph > *:not(:last-child) {
+  padding-bottom: 1rem;
+}
+
+.contact {
+  background-color: #dce6f2;
+  clip-path: polygon(0 10%, 100% 0, 100% 85%, 0 100%);
+  padding: 4rem 0 8.5rem;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.contact__field {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.contact__form {
+  width: 60%;
+  margin: 2rem auto 0;
+  position: relative;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #366092;
+}
+
+.contact__form input, .contact__form textarea, .contact__form button {
+  font: inherit;
+  background-color: transparent;
+  color: currentColor;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 3.3rem;
+  padding: .5rem;
+  border: none;
+  border-bottom: 0.1rem solid #366092;
+  border-radius: .15rem;
+  outline: none;
+  box-shadow: none;
+  transition: all .5s ease-out;
+}
+
+.contact__form label {
+  margin-bottom: 3rem;
+  display: block;
+  text-align: justify;
+  transform: translateY(0);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+  transition: all .5s ease-out;
+}
+
+.contact__form button {
+  color: #366092;
+  background: linear-gradient(to left, #366092 0%, #dce6f2 50%, #366092 100%);
+  border: none;
+  padding: .7rem;
+  position: relative;
+  z-index: 10;
+  transition: all .5s ease-out;
+}
+
+.contact__form button:hover {
+  opacity: 0;
+}
+
+.contact__form button:hover + div {
+  opacity: 1;
+}
+
+.contact__form input:focus, .contact__form textarea:focus {
+  box-shadow: 0px 0.2rem 0px 0px #366092;
+}
+
+.contact__form input:focus + label, .contact__form textarea:focus + label {
+  opacity: 1;
+  padding: 0 1rem;
+  color: #3d6ca5;
+  transform: translateY(-0.5rem);
+}
+
+.contact__btnbg {
+  position: relative;
+  height: 3.3rem;
+  width: 100%;
+  transform: translateY(-3.3rem);
+  z-index: 1;
+  opacity: 0;
+  background: linear-gradient(to left, #dce6f2 0%, #366092 50%, #dce6f2 100%);
+  color: #dce6f2;
+  padding-top: .7rem;
+  font-weight: bold;
+  transition: all .5s ease-out;
+}
+
+.contact__error-msg {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
+  color: #dce6f2;
+  background: #366092;
+  font-weight: bold;
+  padding: 7rem 0 3rem;
+  opacity: 0;
+  z-index: 1;
+  transition: all .5s ease-out;
+}
+
+.contact__error-msg.show {
+  opacity: 1;
+}
+
+.contact__list {
+  display: grid;
+  grid-auto-flow: column;
+  padding: 0 20%;
+}
+
+.contact__list li {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.contact__icon {
+  height: 3.5rem;
+  width: 3.5rem;
+  fill: #366092;
+  transition: all .5s ease-out;
+}
+
+.contact__icon:hover {
+  transform: skewY(-4deg) scale(1.1) translateX(0.5rem);
+}
+
+.footer {
+  background: #366092;
+  clip-path: polygon(0 25%, 100% 0, 100% 100%, 0 100%);
+  padding: 9rem 0 6rem;
+  margin-top: -8rem;
+}

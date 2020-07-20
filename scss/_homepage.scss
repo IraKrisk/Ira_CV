@@ -1,0 +1,303 @@
+// Header
+.header {
+  background-color: $blue-dark;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  padding: 6rem 0 9rem;
+  position: relative;
+  &__nav {
+    position: absolute;
+    top: 3rem;
+    transform: translateY(-16rem);
+    padding: 0 0 3rem;
+
+    &--name {
+      grid-column: 1 / -1;
+      width: 90%;
+      color: $blue-light;
+      font-size: 2.3rem;
+      font-weight: 300;
+      padding: 0 0 3rem 0;
+      margin: -2rem auto 0 7%;
+      display: none;
+      &:hover {
+        transform: skewY(0) scale(1) translateX(0);  // removes hover efect
+      }
+    }
+    // when button is clicked
+    &.open {
+      transform: translateY(1rem);
+    }
+  }
+}
+
+// Info
+.info {
+  font-style: normal;
+  width: 100%;
+  padding: 6rem 0;
+  background-color: $blue-light;
+  clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+  margin-top: -6rem;
+  &__text {
+    position: relative;
+    line-height: 3;
+    font-weight: 600;
+    text-align: center;
+    transform: translateX(-2rem);
+  }
+  &__icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    fill: $blue-dark;
+    position: absolute;
+    top: 1.2rem;
+    transform: translateX(50%);
+    @include jump-effect(-4deg, 1.1, 1.7rem);
+    @include ease-out;
+  }
+  a {
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: $text-color;
+    }
+  }
+}
+
+// About Me
+.about {
+  h3 {
+    padding-top: 3rem;
+  }
+  &__paragraph {
+    @include padding-bottom(.5rem);
+    p {
+      font-weight: 400;
+    }
+  }
+}
+
+// Work
+.work {
+  &__wrapper {
+    @include padding-bottom(3rem);
+  }
+  &__date {
+    @extend %date;
+    padding-top: .5rem;
+  }
+  &__company {
+    padding: 1rem 0 .5rem 0;
+  }
+  &__desc > p {
+    margin-left: 1rem;
+  }
+  &__desc {
+    @include padding-bottom(.5rem);
+  }
+}
+
+// Education
+.education {
+  &__institution {
+    padding-bottom: 1rem;
+  }
+  &__degree {
+    font-size: 1.6rem;
+    font-weight: 300;
+  }
+  &__date {
+    @extend %date;
+    padding-top: .3rem;
+  }
+}
+
+// Skills
+.skills {
+  &__list li {
+    padding: .5rem;
+    font-weight: 400;
+  }
+}
+
+// Languages
+.languages {
+  &__language {
+    @include padding-bottom(2rem);
+  }
+}
+
+// Projects
+.projects {
+  &__project {
+    @include padding-bottom(2rem);
+  }
+}
+
+// Certificates
+.certificates {
+  &__mobile {
+    & > a {
+    display: block;
+    padding: .4rem;
+    }
+    h4 {
+      font-weight: 100;
+      font-size: 1.6rem;
+    }
+  }
+  &__desktop {
+    & > a {
+      display: none;
+    }
+    img {
+      width: 32rem;
+    }
+    // display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+// Hobbies
+.hobbies {
+  &__paragraph {
+    @include padding-bottom(1rem);
+  }
+}
+
+// Contact form
+.contact {
+  background-color: $blue-light;
+  clip-path: polygon(0 10%, 100% 0, 100% 85%, 0 100%);
+  padding: 4rem 0 8.5rem;
+  margin-top: 2rem;
+  position: relative;
+  &__field {
+    position: relative;
+    margin-bottom: 3rem;
+  }
+  &__form {
+    width: 60%;
+    margin: 2rem auto 0;
+    position: relative;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: $blue-dark;
+    & input, & textarea, & button {
+      font: inherit; 
+      background-color: transparent;
+      color: currentColor;
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 3.3rem;
+      padding: .5rem;
+      border: none;
+      border-bottom: .1rem solid $blue-dark;
+      border-radius: .15rem;
+      outline: none;
+      box-shadow: none;
+      @include ease-out;
+    }
+    & label { 
+      margin-bottom: 3rem;
+      display: block;
+      text-align: justify;
+      transform: translateY(0);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      z-index: 1;
+      @include ease-out;
+    }
+    & button {
+      color: $blue-dark;
+      background: linear-gradient(to left, $blue-dark 0%, $blue-light 50%, $blue-dark 100%);
+      border: none;
+      padding: .7rem;
+      position: relative;
+      z-index: 10;
+      @include ease-out;
+      &:hover {
+        opacity: 0;
+        & + div {
+          opacity: 1;
+        }
+      }
+    }
+
+    // input and textarea in focus
+    & input:focus, & textarea:focus {
+      box-shadow: 0px .2rem 0px 0px $blue-dark;
+    }
+    & input:focus + label, & textarea:focus + label {
+      opacity: 1;
+      padding: 0 1rem; 
+      color: lighten($blue-dark, 5%);
+      transform: translateY(-.5rem);
+    }
+  }  // &__form closed
+
+  &__btnbg {
+    position: relative;
+    height: 3.3rem;
+    width: 100%;
+    transform: translateY(-3.3rem);
+    z-index: 1;
+    opacity: 0;
+    background: linear-gradient(to left, $blue-light 0%, $blue-dark 50%, $blue-light 100%);
+    color: $blue-light;
+    padding-top: .7rem;
+    font-weight: bold;
+    @include ease-out;
+  }
+
+  // error message
+  &__error-msg {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
+    color: $blue-light;
+    background: $blue-dark;
+    font-weight: bold;
+    padding: 7rem 0 3rem;
+    opacity: 0; 
+    z-index: 1;
+    @include ease-out;
+    &.show {
+      opacity: 1;
+    }
+  }
+
+  // Icons
+  &__list { 
+    display: grid;
+    grid-auto-flow: column;
+    padding: 0 20%;
+    & li {
+      display: inline-block;
+      margin: 0 auto;
+    }
+  }
+  &__icon {
+    height: 3.5rem;
+    width: 3.5rem;
+    fill: $blue-dark;
+    @include jump-effect(-4deg, 1.1, .5rem);
+    @include ease-out;  
+  }
+}
+
+// Footer
+.footer {
+  background: $blue-dark;
+  clip-path: polygon(0 25%, 100% 0, 100% 100%, 0 100%);
+  padding: 9rem 0 6rem;
+  margin-top: -8rem;
+}

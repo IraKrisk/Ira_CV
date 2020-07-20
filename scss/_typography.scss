@@ -1,0 +1,47 @@
+body {
+  color: $text-color;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1.6rem;
+}
+h1, h2, h3, h4 {
+  color: $blue-light;
+  font-weight: 300;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+h1 {
+  text-transform: uppercase;
+}
+h3, h4 {
+  color: $blue-dark;
+  font-weight: 700;
+}
+h3 {
+  letter-spacing: .05;
+  text-transform: uppercase;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-gap: 1.5rem;
+  align-items: end;
+  padding: 4rem 0 2rem;
+  @include ease-out;
+  @include jump-effect(-.2deg, 1.02, 0);
+
+  &::before, &::after {
+    content: '';
+    display: block;
+    height: .15rem;
+    background: $blue-dark;
+    margin-bottom: .4rem;
+    background: linear-gradient(to left, $blue-light, $blue-dark);
+  }
+  &::before {
+    background: linear-gradient(to right, $blue-light, $blue-dark);
+  }
+}
+h4 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.8rem;
+  display: inline-block;
+}
+
