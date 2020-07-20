@@ -1,6 +1,6 @@
 // Navigation
 .nav {
-  width: 93%;
+  width: 95%;
   margin: 0 auto;
   background: $blue-dark;
   @include ease-out;
@@ -31,8 +31,8 @@
 // Menu Button
 .menu {
   position: absolute;
-  top: 3rem;
-  right: 2rem;
+  top: 1rem;
+  right: 1rem;
   width: 2.5rem;
   height: 2.5rem;
   cursor: pointer;

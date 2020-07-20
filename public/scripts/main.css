@@ -111,7 +111,7 @@ h4 {
 }
 
 .nav {
-  width: 93%;
+  width: 95%;
   margin: 0 auto;
   background: #366092;
   transition: all .5s ease-out;
@@ -143,8 +143,8 @@ h4 {
 
 .menu {
   position: absolute;
-  top: 3rem;
-  right: 2rem;
+  top: 1rem;
+  right: 1rem;
   width: 2.5rem;
   height: 2.5rem;
   cursor: pointer;
@@ -341,7 +341,7 @@ h4 {
 }
 
 .certificates__desktop img {
-  width: 32rem;
+  max-width: 22rem;
 }
 
 .hobbies__paragraph > *:not(:last-child) {
@@ -488,4 +488,120 @@ h4 {
   clip-path: polygon(0 25%, 100% 0, 100% 100%, 0 100%);
   padding: 9rem 0 6rem;
   margin-top: -8rem;
+}
+
+@media screen and (min-width: 37.5em) {
+  .header__nav--name {
+    display: grid;
+  }
+  .skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.sidebar .lang-hob {
+  display: none;
+}
+
+@media screen and (min-width: 56.25em) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  body {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 'header header' 'sidebar main' 'contact contact' 'footer footer';
+  }
+  .header {
+    grid-area: header;
+    z-index: 5;
+  }
+  .sidebar {
+    grid-area: sidebar;
+    background: #dce6f2;
+    margin: -3rem 0 -9rem 0;
+    padding: 6rem 1rem 15rem 1rem;
+  }
+  .sidebar .lang-hob {
+    display: block;
+  }
+  .main {
+    grid-area: main;
+  }
+  .main .lang-hob {
+    display: none;
+  }
+  .certificates__mobile > a {
+    display: none;
+  }
+  .certificates__desktop > a {
+    display: block;
+  }
+  .contact {
+    grid-area: contact;
+    background: #366092;
+  }
+  .contact h3 {
+    color: #dce6f2;
+  }
+  .contact__form {
+    margin-top: 4rem;
+  }
+  .contact__form input, .contact__form textarea, .contact__form button {
+    color: #dce6f2;
+    border-color: #dce6f2;
+  }
+  .contact__form input:focus + label, .contact__form textarea:focus + label {
+    color: #c9d9eb;
+  }
+  .contact__error-msg {
+    color: #366092;
+    background: #dce6f2;
+  }
+  .contact__icon {
+    fill: #dce6f2;
+  }
+  .info {
+    margin-bottom: -4rem;
+  }
+  .footer {
+    grid-area: footer;
+    margin-top: -10rem;
+    padding-top: 6rem;
+  }
+  .footer__nav {
+    border-top: 0.1rem solid #dce6f2;
+    padding-top: 5rem;
+  }
+  .skills {
+    grid-template-columns: 1fr;
+  }
+  ::placeholder {
+    color: #dce6f2;
+  }
+}
+
+@media screen and (min-width: 68.75em) {
+  .sidebar {
+    padding-left: 5vw;
+  }
+  .main {
+    padding-right: 5vw;
+  }
+  .certificates__desktop img {
+    width: 25rem;
+  }
+}
+
+@media screen and (min-width: 75em) {
+  .sidebar {
+    padding-left: 10vw;
+  }
+  .main {
+    padding-right: 12vw;
+  }
 }

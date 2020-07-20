@@ -152,10 +152,8 @@
       display: none;
     }
     img {
-      width: 32rem;
+      max-width: 22rem;
     }
-    // display: grid;
-    // grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;

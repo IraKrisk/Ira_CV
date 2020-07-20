@@ -74,22 +74,22 @@ $text-color: #262626;
   }
 }
 
-@mixin media1 {
+@mixin mediaS {
   @media screen and (min-width: 37.5em) {
     @content;
   }
 }
-@mixin media2 {
+@mixin mediaM {
   @media screen and (min-width: 56.25em) {
     @content;
   }
 }
-@mixin media3 {
+@mixin mediaL{
   @media screen and (min-width: 68.75em) {
     @content;
   }
 }
-@mixin media4 {
+@mixin mediaXL {
   @media screen and (min-width: 75em) {
     @content;
   }

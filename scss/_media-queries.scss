@@ -1,0 +1,140 @@
+@include mediaS {
+  .header {
+    &__nav--name {
+      display: grid;
+    }
+  }
+  .skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.sidebar {
+  .lang-hob {
+    display: none;
+  }
+}
+
+@include mediaM {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  body {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 
+      'header header'
+      'sidebar main'
+      'contact contact'
+      'footer footer'
+    ;
+  }
+  .header {
+    grid-area: header;
+    z-index: 5;
+  }
+  .sidebar {
+    grid-area: sidebar;
+    background: $blue-light;
+    margin: -3rem 0 -9rem 0;
+    padding: 6rem 1rem 15rem 1rem;
+    .lang-hob {
+      display: block;
+    }
+  }
+  .main {
+    grid-area: main;
+    .lang-hob {
+      display: none;
+    }
+  }
+  .certificates {
+    &__mobile {
+      & > a {
+      display: none;
+      }
+    }
+    &__desktop {
+       & > a {
+        display: block;
+      }
+    }
+  }
+  .contact {
+    grid-area: contact;
+    background: $blue-dark;
+    h3 {
+      color: $blue-light;
+    }
+    &__form {
+      margin-top: 4rem;
+      & input, & textarea, & button {
+        color: $blue-light;
+        border-color: $blue-light;
+      }
+      // input and textarea in focus
+      & input:focus + label, & textarea:focus + label {
+        color: darken($blue-light, 5%);
+      }
+    }
+
+    &__error-msg {
+      color: $blue-dark;
+      background: $blue-light;
+    }
+
+    // Icons
+    &__icon {
+      fill: $blue-light; 
+    }
+  }
+
+
+  .info {
+    margin-bottom: -4rem;
+  }
+  .footer {
+    grid-area: footer;
+    margin-top: -10rem;
+    padding-top: 6rem;
+    
+    &__nav {
+      border-top: .1rem solid $blue-light;
+      padding-top: 5rem;
+    }
+   }
+
+  .skills {
+    grid-template-columns: 1fr;
+  }
+
+  ::placeholder {
+    color: $blue-light;
+  }
+}
+
+@include mediaL {
+  .sidebar {
+    padding-left: 5vw;
+  }
+  .main {
+    padding-right: 5vw;
+  }
+  .certificates {
+    &__desktop img {
+      width: 25rem;
+    }
+  }
+}
+
+@include mediaXL {
+  .sidebar {
+    padding-left: 10vw;
+  }
+  .main {
+    padding-right: 12vw;
+  }
+}
