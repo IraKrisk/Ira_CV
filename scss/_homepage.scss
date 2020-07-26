@@ -85,7 +85,7 @@
   }
   &__date {
     @extend %date;
-    padding-top: .5rem;
+    padding-top: .2rem;
   }
   &__company {
     padding: 1rem 0 .5rem 0;
@@ -118,6 +118,7 @@
   &__list li {
     padding: .5rem;
     font-weight: 400;
+    line-height: 1;
   }
 }
 
@@ -138,17 +139,16 @@
 // Certificates
 .certificates {
   &__mobile {
-    & > a {
+    & > li {
     display: block;
     padding: .4rem;
+    & > a {
+      color: $text-color;
     }
-    h4 {
-      font-weight: 100;
-      font-size: 1.6rem;
     }
   }
   &__desktop {
-    & > a {
+    & > li {
       display: none;
     }
     img {

@@ -20,7 +20,6 @@ function toggleMenu() {
   }
 }
 
-
 // Form validation
 let name = document.querySelector('#name');
 let email = document.querySelector('#email');
@@ -38,24 +37,18 @@ submit.addEventListener('click', e => {
     errorMessage = 'Please enter correct email format';
   } else {
     errorMessage = 'Message sent. Thank you';
-
-    name.value = '';
-    email.value = '';
-    message.value = '';
   }
 
   formMsg.innerHTML = errorMessage;
   formMsg.classList.add('show');
   setTimeout(() => {
-    formMsg.classList.remove('show')
-  }, 3000);
-
-});
-
+    formMsg.classList.remove('show');
+  }, 5000);
+});   
 
 // Add href attribute to phone number for mobile
-const phone = document.querySelector('.phone');  // icon on the top
-const contactPhone = document.querySelector('.contact-phone');  // icon on the bottom
+const phone = document.querySelector('.phone');  // top icon
+const contactPhone = document.querySelector('.contact-phone');  // bottom icon
 const isMobile = /iPhone|iPad|iPod|webOS|Windows Phone|Android/i.test(navigator.userAgent);
 
 if (isMobile) {
@@ -65,3 +58,31 @@ if (isMobile) {
   phone.removeAttribute('href');
   contactPhone.setAttribute('href', '#address');
 }
+
+// Firebase configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyC9Bd_i9UjEDkG0p_-X1fYzqbx3bnCupYE",
+  authDomain: "ira-cv.firebaseapp.com",
+  databaseURL: "https://ira-cv.firebaseio.com",
+  projectId: "ira-cv",
+  storageBucket: "ira-cv.appspot.com",
+  messagingSenderId: "197004234569",
+  appId: "1:197004234569:web:a3c0db756fb85659c39498"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Contact Form Data
+submit.addEventListener('click', e => {
+  e.preventDefault();
+  let nameInput = name.value;
+  let emailInput = email.value;
+  let messageInput = message.value;
+  const data = {
+    name: nameInput,
+    email: emailInput,
+    message: messageInput
+  }
+
+  axios.post('https://us-central1-ira-cv.cloudfunctions.net/emailMessage', data);
+});

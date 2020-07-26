@@ -1,7 +1,7 @@
 // CSS Reset
 html {
 box-sizing: border-box;
-font-size: 62.5%; 
+font-size: 62.5%; // 1rem = 10px
 }
 *,
 *::before,
@@ -74,21 +74,25 @@ $text-color: #262626;
   }
 }
 
+// 600px
 @mixin mediaS {
   @media screen and (min-width: 37.5em) {
     @content;
   }
 }
+// 900px
 @mixin mediaM {
   @media screen and (min-width: 56.25em) {
     @content;
   }
 }
+// 1100px
 @mixin mediaL{
   @media screen and (min-width: 68.75em) {
     @content;
   }
 }
+// 1200px
 @mixin mediaXL {
   @media screen and (min-width: 75em) {
     @content;

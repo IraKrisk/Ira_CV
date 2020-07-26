@@ -31,6 +31,7 @@
       'contact contact'
       'footer footer'
     ;
+    font-size: 1.5rem;
   }
   .header {
     grid-area: header;
@@ -53,12 +54,12 @@
   }
   .certificates {
     &__mobile {
-      & > a {
+      & > li {
       display: none;
       }
     }
     &__desktop {
-       & > a {
+       & > li {
         display: block;
       }
     }
@@ -71,7 +72,7 @@
     }
     &__form {
       margin-top: 4rem;
-      & input, & textarea, & button {
+      & input, & textarea {
         color: $blue-light;
         border-color: $blue-light;
       }
@@ -91,7 +92,6 @@
       fill: $blue-light; 
     }
   }
-
 
   .info {
     margin-bottom: -4rem;
@@ -131,8 +131,11 @@
 }
 
 @include mediaXL {
+  body {
+    font-size: 1.6rem;
+  }
   .sidebar {
-    padding-left: 10vw;
+    padding-left: 12vw;
   }
   .main {
     padding-right: 12vw;
