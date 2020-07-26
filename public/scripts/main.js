@@ -61,7 +61,7 @@ if (isMobile) {
 
 // Firebase configuration
 var firebaseConfig = {
-  apiKey: "AIzaSyC9Bd_i9UjEDkG0p_-X1fYzqbx3bnCupYE",
+  apiKey: "api_key",
   authDomain: "ira-cv.firebaseapp.com",
   databaseURL: "https://ira-cv.firebaseio.com",
   projectId: "ira-cv",
